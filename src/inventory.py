@@ -11,14 +11,14 @@ for i in k:
     with Image.open(i) as img:
         name = i.name
         width, height = img.size # i is the file path
-        format = img.format #img is the image
+        formati = img.format #img is the image
         mode = img.mode
 
         d = {
             "name": name, 
             "width": width,
             "height": height,
-            "format": format,
+            "format": formati,
             "mode": mode
         }
         details.append(d)
