@@ -3,9 +3,20 @@ from pathlib import Path
 import pandas as pd
 
 folder = Path("data/raw")
+
+if not folder.exists():
+    raise FileNotFoundError("Input folder does not exist.")
+
 k = folder.glob("*.jpg")
 
 details = []
+
+k = list(folder.glob("*.jpg"))
+
+if not k:
+    raise FileNotFoundError(
+        f"No .jpg images found in {folder.resolve()}"
+    )
 
 for i in k:
     with Image.open(i) as img:
